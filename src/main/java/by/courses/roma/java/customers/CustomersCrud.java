@@ -50,7 +50,12 @@ public class CustomersCrud implements Crud<Customers> {
         try {
             PreparedStatement ps = conn.prepareStatement(
 
-                    " UPDATE customers\n" + "SET id = ?, firstname = ?\n" + "WHERE id = ?");
+                    " UPDATE customers\n" + "SET firstname = ?\n" + "WHERE id = ?");
+
+
+            ps.setString(1, obj.getFirstName());
+
+            ps.setInt(2, obj.getId());
 
             ps.executeUpdate();
 
