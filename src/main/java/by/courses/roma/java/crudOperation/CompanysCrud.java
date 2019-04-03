@@ -1,6 +1,8 @@
-package by.courses.roma.java.companys;
+package by.courses.roma.java.crudOperation;
 
 import by.courses.roma.java.crudOperation.Crud;
+import by.courses.roma.java.entity.Companys;
+
 import java.sql.*;
 
 public class CompanysCrud implements Crud<Companys> {

@@ -1,6 +1,7 @@
-package by.courses.roma.java.orders;
+package by.courses.roma.java.crudOperation;
 
 import by.courses.roma.java.crudOperation.Crud;
+import by.courses.roma.java.entity.Orders;
 
 import java.sql.*;
 
@@ -32,6 +33,7 @@ public class OrdersCrud implements Crud<Orders> {
     public Orders read(int id, Connection conn) {
 
         try {
+
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM orders" + " WHERE id = ?");
 
             ps.setInt(1, id);
@@ -40,7 +42,7 @@ public class OrdersCrud implements Crud<Orders> {
 
             if (rs.next())
 
-                return new Orders(id, rs.getInt(1),rs.getInt(2),rs.getDate(3));
+                return new Orders(id, rs.getInt(2),rs.getInt(3),rs.getDate(4));
 
         } catch (SQLException e) {
 
@@ -52,6 +54,7 @@ public class OrdersCrud implements Crud<Orders> {
     public void update(Orders obj, Connection conn) {
 
         try {
+
             PreparedStatement ps = conn.prepareStatement(
 
                     " UPDATE orders\n" + "SET productid = ?,customerid = ?, createdat = ?\n" + "WHERE id = ?");

@@ -1,7 +1,7 @@
-package by.courses.roma.java.customers;
+package by.courses.roma.java.crudOperation;
 
-import by.courses.roma.java.connectionWithBD.ConnectionBD;
 import by.courses.roma.java.crudOperation.Crud;
+import by.courses.roma.java.entity.Customers;
 
 import java.sql.*;
 

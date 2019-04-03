@@ -1,4 +1,4 @@
-package by.courses.roma.java.customers;
+package by.courses.roma.java.entity;
 
 import lombok.AllArgsConstructor;
 
