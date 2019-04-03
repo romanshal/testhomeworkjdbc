@@ -50,6 +50,12 @@ public class ConnectionBD {
 
         obj.delete(updateUser,connect());
 
+        try {
+            connect().close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
