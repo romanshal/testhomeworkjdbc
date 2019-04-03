@@ -1,8 +1,5 @@
 package by.courses.roma.java.entity;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor(staticName = "of")
 public class Products {
 
     private int id;

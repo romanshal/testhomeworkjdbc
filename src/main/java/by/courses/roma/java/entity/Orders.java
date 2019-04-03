@@ -1,9 +1,7 @@
 package by.courses.roma.java.entity;
 
-import lombok.AllArgsConstructor;
 import java.sql.Date;
 
-@AllArgsConstructor(staticName = "of")
 public class Orders {
 
     private int id;

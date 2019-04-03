@@ -1,5 +1,8 @@
 package by.courses.roma.java.connectionWithBD;
 
+import by.courses.roma.java.crudOperation.CustomersCrud;
+import by.courses.roma.java.entity.Customers;
+
 import java.sql.*;
 
 
@@ -27,5 +30,26 @@ public class ConnectionBD {
             e.printStackTrace();
         }
         return conn;
+    }
+
+    public static void main(String[] args){
+
+        Customers user=new Customers(5,"Kate");
+
+        Customers updateUser=new Customers(5,"Dima");
+
+        CustomersCrud obj=new CustomersCrud();
+
+        obj.create(user,connect());
+
+        Customers readUser=obj.read(5,connect());
+
+        System.out.println(readUser.toString());
+
+        obj.update(updateUser,connect());
+
+        obj.delete(updateUser,connect());
+
+
     }
 }
