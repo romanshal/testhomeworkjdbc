@@ -18,6 +18,8 @@ public class CustomersCrud implements Crud<Customers> {
 
             ps.execute();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -38,9 +40,14 @@ public class CustomersCrud implements Crud<Customers> {
 
                 return new Customers(id, rs.getString(1));
 
+            rs.close();
+
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
+
         }
         return null;
     }
@@ -59,6 +66,8 @@ public class CustomersCrud implements Crud<Customers> {
 
             ps.executeUpdate();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -75,6 +84,8 @@ public class CustomersCrud implements Crud<Customers> {
             ps.setInt(1,obj.getId());
 
             ps.execute();
+
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

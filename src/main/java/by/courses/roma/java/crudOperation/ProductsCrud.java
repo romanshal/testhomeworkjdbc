@@ -22,6 +22,8 @@ public class ProductsCrud implements Crud<Products>{
 
             ps.execute();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -42,6 +44,10 @@ public class ProductsCrud implements Crud<Products>{
             if (rs.next())
 
                 return new Products(id, rs.getString(2),rs.getInt(3),rs.getInt(4));
+
+            rs.close();
+
+            ps.close();
 
         } catch (SQLException e) {
 
@@ -69,6 +75,8 @@ public class ProductsCrud implements Crud<Products>{
 
             ps.executeUpdate();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -84,6 +92,8 @@ public class ProductsCrud implements Crud<Products>{
             ps.setInt(1,obj.getId());
 
             ps.execute();
+
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

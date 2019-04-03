@@ -23,6 +23,8 @@ public class OrdersCrud implements Crud<Orders> {
 
             ps.execute();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -43,6 +45,10 @@ public class OrdersCrud implements Crud<Orders> {
             if (rs.next())
 
                 return new Orders(id, rs.getInt(2),rs.getInt(3),rs.getDate(4));
+
+            rs.close();
+
+            ps.close();
 
         } catch (SQLException e) {
 
@@ -70,6 +76,8 @@ public class OrdersCrud implements Crud<Orders> {
 
             ps.executeUpdate();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -85,6 +93,8 @@ public class OrdersCrud implements Crud<Orders> {
             ps.setInt(1,obj.getId());
 
             ps.execute();
+
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

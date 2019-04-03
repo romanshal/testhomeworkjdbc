@@ -16,6 +16,8 @@ public class ShopCrud implements Crud<Shop>{
 
             ps.execute();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -36,6 +38,10 @@ public class ShopCrud implements Crud<Shop>{
             if (rs.next())
 
                 return new Shop(rs.getString(1), id);
+
+            rs.close();
+
+            ps.close();
 
         } catch (SQLException e) {
 
@@ -59,6 +65,8 @@ public class ShopCrud implements Crud<Shop>{
 
             ps.executeUpdate();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -74,6 +82,8 @@ public class ShopCrud implements Crud<Shop>{
             ps.setInt(1,obj.getProduct());
 
             ps.execute();
+
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -18,6 +18,8 @@ public class CompanysCrud implements Crud<Companys> {
 
             ps.execute();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -36,6 +38,9 @@ public class CompanysCrud implements Crud<Companys> {
             if (rs.next())
 
                 return new Companys(rs.getString(1), members);
+
+            rs.close();
+            ps.close();
 
         } catch (SQLException e) {
 
@@ -57,6 +62,8 @@ public class CompanysCrud implements Crud<Companys> {
 
             ps.executeUpdate();
 
+            ps.close();
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -73,6 +80,8 @@ public class CompanysCrud implements Crud<Companys> {
             ps.setString(1,obj.getName());
 
             ps.execute();
+
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
